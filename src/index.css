@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-canvas: #07050d;
+  --color-canvas-subtle: #0d0a18;
+  --color-text-primary: #f5f3ff;
+  --color-text-secondary: #a9a3b8;
+  --color-accent-violet: #a855f7;
+  --color-accent-magenta: #d946ef;
+  --color-accent-cyan: #67e8f9;
+}
+
+:root {
+  --bg-primary: #07050d;
+  --text-primary: #f5f3ff;
+  --text-secondary: #a9a3b8;
+  --accent-violet: #a855f7;
+  --accent-magenta: #d946ef;
+  --accent-cyan: #67e8f9;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Smoked glass base utility */
+.smoked-glass {
+  background: rgba(10, 8, 18, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(168, 85, 247, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.smoked-glass-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smoked-glass-hover:hover {
+  background: rgba(14, 10, 24, 0.6);
+  border-color: rgba(168, 85, 247, 0.28);
+  box-shadow: 0 12px 40px 0 rgba(168, 85, 247, 0.12);
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
